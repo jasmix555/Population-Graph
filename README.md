@@ -16,14 +16,14 @@ cd population-graph
 ### Install dependencies:
 
 ```bash
-bun install
+npm install
 ```
 
 ### Add Environment Variables:
 
 Create a .env.local file in the root directory and add your RESAS API key:
 
-RESAS API:
+RESAS API Key can be obtained from the following link:
 "https://opendata.resas-portal.go.jp/form.html"
 
 ```env
@@ -33,5 +33,5 @@ VITE_RESAS_API_KEY="your_resas_api_key"
 ### Start the development server:
 
 ```bash
-bun run dev
+npm run dev
 ```
