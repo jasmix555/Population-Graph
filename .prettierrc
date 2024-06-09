@@ -1,0 +1,6 @@
+{
+  "experimentalTernaries": true,
+  "singleQuote": true,
+  "singleAttributePerLine": true,
+  "tabWidth": 2
+}
