@@ -1,4 +1,3 @@
-import { describe, it, expect, vi, afterEach } from 'vitest';
 import axios from 'axios';
 import { fetchPrefectures } from './resas-api';
 
