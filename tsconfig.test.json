@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json", // Inherit settings from main tsconfig
+  "compilerOptions": {
+    "allowJs": true, // Allow running JavaScript files as tests
+    "esModuleInterop": true, // Allow mixing CommonJS and ES modules
+    "target": "esnext", // Compile for modern JavaScript features
+    "jsx": "react", // Enable JSX parsing for React tests
+    "module": "commonjs", // Use CommonJS module format for tests (Vitest convention)
+    "strict": true, // Enable strict mode for type safety
+    "lib": ["dom", "dom.iterable", "esnext"], // Include necessary libraries
+    "types": ["vitest"] // Add Vitest types for IDE support (optional)
+  },
+  "include": ["**/*.test.ts", "**/*.test.jsx"] // Include test files for compilation
+}
