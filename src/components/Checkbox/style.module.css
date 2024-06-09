@@ -1,0 +1,28 @@
+.wrapper {
+  font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+  border: 1px solid #1e1e1e;
+  border-radius: 5px;
+  padding: 0.4rem 1.2rem;
+  display: block;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+}
+.wrapper:hover {
+  background-color: #f0f0f0;
+  scale: 0.96;
+}
+
+.wrapper input {
+  margin-right: 0.6rem;
+  vertical-align: middle;
+}
+
+.checked {
+  border: 1px solid transparent;
+  color: #f0f0f0;
+  background: #0075ff;
+}
+.checked:hover {
+  background: #0055ff;
+  scale: 0.98;
+}

@@ -1,3 +1,5 @@
+import style from './style.module.css';
+
 interface CheckboxProps {
   label: string;
   disabled?: boolean;
@@ -12,7 +14,7 @@ export const Checkbox = ({
   checked,
 }: CheckboxProps) => {
   return (
-    <label>
+    <label className={`${style.wrapper} ${checked ? style.checked : ''}`}>
       <input
         type="checkbox"
         onChange={onChange}

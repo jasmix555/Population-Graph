@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import style from './style.module.css';
 import { Checkbox } from '../Checkbox';
 import { usePrefectures } from '../../api/hooks/usePrefectures';
 import { Prefecture } from '../../types/resas-api';
@@ -29,15 +30,19 @@ export const PrefectureCheckboxes: React.FC = () => {
   }
 
   return (
-    <div>
-      {prefectures.map((prefecture: Prefecture) => (
-        <Checkbox
-          key={prefecture.prefCode}
-          label={prefecture.prefName}
-          checked={selectedPrefectures.includes(prefecture.prefCode)}
-          onChange={(event) => handleCheckboxChange(event, prefecture.prefCode)}
-        />
-      ))}
+    <div className={style.wrapper}>
+      <div className={style.checkboxes}>
+        {prefectures.map((prefecture: Prefecture) => (
+          <Checkbox
+            key={prefecture.prefCode}
+            label={prefecture.prefName}
+            checked={selectedPrefectures.includes(prefecture.prefCode)}
+            onChange={(event) =>
+              handleCheckboxChange(event, prefecture.prefCode)
+            }
+          />
+        ))}
+      </div>
     </div>
   );
 };

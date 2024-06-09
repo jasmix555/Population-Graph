@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.checkboxes {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(clamp(8rem, 25%, 12rem), 1fr)
+  );
+  gap: 0.6rem;
+}
