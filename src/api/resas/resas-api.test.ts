@@ -1,3 +1,4 @@
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import axios from 'axios';
 import { fetchPrefectures } from './resas-api';
 
@@ -14,8 +15,8 @@ describe('RESAS API', () => {
   describe('fetchPrefectures', () => {
     it('should return an array of prefectures on success', async () => {
       const mockPrefectures = [
-        { prefCode: 1, prefName: 'prefecture1' },
-        { prefCode: 2, prefName: 'prefecture2' },
+        { prefCode: 1, prefName: 'Hokkaido' },
+        { prefCode: 2, prefName: 'Aomori' },
       ];
       mockedAxios.get.mockResolvedValueOnce({
         data: { result: mockPrefectures },
@@ -29,20 +30,14 @@ describe('RESAS API', () => {
       expect(prefectures).toEqual(mockPrefectures);
     });
 
-    it('should throw an error when the API fails to fetch prefectures', async () => {
+    it('should throw an error when the request fails', async () => {
       mockedAxios.get.mockRejectedValueOnce({
         response: {
-          data: { message: 'Failed to fetch prefectures' },
-          status: 404,
-          statusText: 'Not Found',
-          headers: {},
-          config: {},
+          data: { message: 'Failed to fetch' },
         },
       });
-    });
 
-    it('should throw an error when an unexpected error occurs', async () => {
-      mockedAxios.get.mockRejectedValueOnce(new Error('Network Error'));
+      await expect(fetchPrefectures()).rejects.toThrow('Failed to fetch');
     });
   });
 });

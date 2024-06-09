@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { Prefecture } from '../../types/resas-api';
+import { Prefecture } from '../../types/types';
 
 const API_KEY = import.meta.env.VITE_RESAS_API_KEY;
-export const BASE_URL = 'https://opendata.resas-portal.go.jp';
+const BASE_URL = 'https://opendata.resas-portal.go.jp';
 
 export const fetchPrefectures = async (): Promise<Prefecture[]> => {
   try {
