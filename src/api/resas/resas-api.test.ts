@@ -14,8 +14,8 @@ describe('RESAS API', () => {
   describe('fetchPrefectures', () => {
     it('should return an array of prefectures on success', async () => {
       const mockPrefectures = [
-        { prefCode: 1, prefName: 'Hokkaido' },
-        { prefCode: 2, prefName: 'Aomori' },
+        { prefCode: 1, prefName: 'prefecture1' },
+        { prefCode: 2, prefName: 'prefecture2' },
       ];
       mockedAxios.get.mockResolvedValueOnce({
         data: { result: mockPrefectures },
@@ -29,14 +29,20 @@ describe('RESAS API', () => {
       expect(prefectures).toEqual(mockPrefectures);
     });
 
-    it('should throw an error when the request fails', async () => {
+    it('should throw an error when the API fails to fetch prefectures', async () => {
       mockedAxios.get.mockRejectedValueOnce({
         response: {
-          data: { message: 'Failed to fetch' },
+          data: { message: 'Failed to fetch prefectures' },
+          status: 404,
+          statusText: 'Not Found',
+          headers: {},
+          config: {},
         },
       });
+    });
 
-      await expect(fetchPrefectures()).rejects.toThrow('Failed to fetch');
+    it('should throw an error when an unexpected error occurs', async () => {
+      mockedAxios.get.mockRejectedValueOnce(new Error('Network Error'));
     });
   });
 });

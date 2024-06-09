@@ -7,11 +7,11 @@ export const handlers = [
       result: [
         {
           prefCode: 1,
-          prefName: '北海道',
+          prefName: 'prefecture1',
         },
         {
           prefCode: 2,
-          prefName: '青森県',
+          prefName: 'prefecture2',
         },
       ],
     });
