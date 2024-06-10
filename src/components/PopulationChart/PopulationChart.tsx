@@ -63,11 +63,7 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
     })
     .flat();
 
-  const chartError = isError ? 'API Error' : null;
-
-  if (isError || chartError) {
-    return <div>Error fetching data: {isError ? 'API Error' : chartError}</div>;
-  }
+  const isAnyCheckboxSelected = selectedPrefectures.length > 0;
 
   const options = {
     chart: {
@@ -78,22 +74,30 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
         height: 'fit-content',
       },
       events: {
+        noData: function (this: CustomChart) {
+          if (!isAnyCheckboxSelected) {
+            this.showLoading('データがありません');
+          }
+          return { text: 'データがありません' };
+        },
         load: function (this: CustomChart) {
           if (isLoading) {
-            this.showLoading('Loading data...');
+            this.showLoading('読み込み中。。。');
           } else {
             this.hideLoading();
           }
         },
         redraw: function (this: CustomChart) {
           if (isLoading) {
-            this.showLoading('Loading data...');
+            this.showLoading('読み込み中。。。');
           } else {
             this.hideLoading();
           }
         },
         error: function (this: CustomChart) {
-          this.showLoading('Error fetching data');
+          if (isError) {
+            this.showLoading('読み込みエラー');
+          }
         },
       },
     },
@@ -133,9 +137,6 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
       },
     },
     series,
-    lang: {
-      noData: 'No data to display',
-    },
   };
 
   return (

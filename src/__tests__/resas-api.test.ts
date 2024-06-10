@@ -12,8 +12,11 @@ describe('RESAS API', () => {
     it('should return an array of prefectures on success', async () => {
       const prefectures = await fetchPrefectures();
       expect(prefectures).toEqual([
-        { prefCode: 1, prefName: 'prefecture1' },
-        { prefCode: 2, prefName: 'prefecture2' },
+        { prefCode: 1, prefName: '北海道' },
+        { prefCode: 2, prefName: '青森県' },
+        { prefCode: 3, prefName: '岩手県' },
+        { prefCode: 13, prefName: '東京都' },
+        { prefCode: 27, prefName: '大阪府' },
       ]);
     });
 
@@ -57,17 +60,21 @@ describe('RESAS API', () => {
         {
           label: 'label1',
           data: [
-            { year: 2010, value: 1000 },
-            { year: 2015, value: 1200 },
-            { year: 2020, value: 1500 },
+            { year: 1980, value: 10000 },
+            { year: 1990, value: 12000 },
+            { year: 2000, value: 14000 },
+            { year: 2010, value: 16000 },
+            { year: 2020, value: 18000 },
           ],
         },
         {
           label: 'label2',
           data: [
-            { year: 2010, value: 2000 },
-            { year: 2015, value: 2200 },
-            { year: 2020, value: 2500 },
+            { year: 1980, value: 20000 },
+            { year: 1990, value: 22000 },
+            { year: 2000, value: 24000 },
+            { year: 2010, value: 26000 },
+            { year: 2020, value: 28000 },
           ],
         },
       ]);

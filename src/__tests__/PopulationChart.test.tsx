@@ -15,7 +15,7 @@ describe('PopulationChart', () => {
   it('displays loading indicator when fetching data', async () => {
     render(<PopulationChart selectedPrefectures={selectedPrefectures} />);
 
-    expect(screen.getByText('Loading data...')).toBeInTheDocument();
+    expect(screen.getByText('読み込み中。。。')).toBeInTheDocument();
   });
 
   it('updates chart when category changes', async () => {
@@ -45,4 +45,12 @@ describe('PopulationChart', () => {
       expect(screen.getByText('Aomori')).toBeInTheDocument();
     });
   });
+
+  // it('displays error message when fetching data fails', async () => {
+  //   render(<PopulationChart selectedPrefectures={selectedPrefectures} />);
+
+  //   await waitFor(() => {
+  //     expect(screen.getByText('読み込みエラー')).toBeInTheDocument();
+  //   });
+  // });
 });
