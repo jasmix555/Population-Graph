@@ -48,7 +48,6 @@ const App: React.FC = () => {
       <header className={style.header}>都道府県別人口推移</header>
       <div className={style.container}>
         <PrefectureCheckboxes
-          prefectures={prefectures}
           selectedPrefectures={selectedPrefectures}
           onChange={handlePrefectureChange}
           setSelectedPrefectures={setSelectedPrefectures}

@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { usePopulationInfo } from '../../api/hooks/usePopulationInfo';
-import { Prefecture } from '../../types/resas-api';
+import { PopulationChartProps } from '../../types/resas-api';
 import style from './style.module.css';
 
 type CustomChart = Highcharts.Chart & {
   showLoading(message?: string): void;
   hideLoading(): void;
 };
-interface PopulationChartProps {
-  selectedPrefectures: Prefecture[];
-}
 
 export const PopulationChart: React.FC<PopulationChartProps> = ({
   selectedPrefectures,

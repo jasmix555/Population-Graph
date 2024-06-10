@@ -1,21 +1,16 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import style from './style.module.css';
 import { Checkbox } from '../Checkbox';
 import { usePrefectures } from '../../api/hooks/usePrefectures';
 import { useFilteredPrefectures } from '../../hooks/useFilteredPrefectures';
 import { regions } from '../../types/regions';
+import { PrefectureCheckboxesProps } from '../../types/resas-api';
 
-interface Props {
-  selectedPrefectures: number[];
-  onChange: (selectedPrefectureCode: number) => void;
-  setSelectedPrefectures: React.Dispatch<React.SetStateAction<number[]>>;
-}
-
-export const PrefectureCheckboxes = ({
+export const PrefectureCheckboxes: React.FC<PrefectureCheckboxesProps> = ({
   selectedPrefectures,
   onChange,
   setSelectedPrefectures,
-}: Props) => {
+}) => {
   const { isLoading, isError, prefectures } = usePrefectures();
   const [selectedRegion, setSelectedRegion] = useState<string>('');
 
