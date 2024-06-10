@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { fetchPrefectures } from './resas-api';
+import { fetchPrefectures } from '../api/resas/resas-api';
 
 vi.mock('axios');
 const mockedAxios = axios as typeof axios & {
