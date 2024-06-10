@@ -65,10 +65,11 @@ export const PrefectureCheckboxes = () => {
           ))}
         </select>
         <button
+          className={style.reset}
           type="button"
           onClick={handleUncheckAll}
         >
-          全てチェックを外す
+          選択を解除
         </button>
       </div>
 

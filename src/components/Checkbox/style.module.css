@@ -3,9 +3,10 @@
   border: 1px solid #1e1e1e;
   border-radius: 5px;
   padding: 0.4rem 1.2rem;
-  display: block;
+  display: flex;
   cursor: pointer;
   transition: 100ms ease-in-out;
+  align-items: center;
 }
 .wrapper:hover {
   background-color: #f0f0f0;
@@ -14,7 +15,7 @@
 
 .wrapper input {
   margin-right: 0.6rem;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 
 .checked {

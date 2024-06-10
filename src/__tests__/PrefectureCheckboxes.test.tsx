@@ -49,7 +49,7 @@ describe('PrefectureCheckboxes', () => {
     });
 
     // Click the uncheck all button
-    const uncheckAllButton = getByText('全てチェックを外す');
+    const uncheckAllButton = getByText('選択を解除');
     fireEvent.click(uncheckAllButton);
 
     await waitFor(() => {
