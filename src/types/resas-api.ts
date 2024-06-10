@@ -3,6 +3,10 @@ export interface Prefecture {
   prefName: string;
 }
 
+export interface PopulationChartProps {
+  selectedPrefectures: Prefecture[];
+}
+
 export interface PopulationData {
   year: number;
   value: number;
@@ -25,4 +29,10 @@ export interface PopulationResult {
 
 export interface PopulationDataByPrefecture {
   [prefCode: number]: PopulationResponse[];
+}
+
+export interface PrefectureCheckboxesProps {
+  selectedPrefectures: number[];
+  onChange: (selectedPrefectureCode: number) => void;
+  setSelectedPrefectures: React.Dispatch<React.SetStateAction<number[]>>;
 }

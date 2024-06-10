@@ -6,14 +6,11 @@ export const handlers = [
   http.get(`${BASE_URL}/api/v1/prefectures`, () => {
     return HttpResponse.json({
       result: [
-        {
-          prefCode: 1,
-          prefName: 'prefecture1',
-        },
-        {
-          prefCode: 2,
-          prefName: 'prefecture2',
-        },
+        { prefCode: 1, prefName: '北海道' },
+        { prefCode: 2, prefName: '青森県' },
+        { prefCode: 3, prefName: '岩手県' },
+        { prefCode: 13, prefName: '東京都' },
+        { prefCode: 27, prefName: '大阪府' },
       ],
     });
   }),
