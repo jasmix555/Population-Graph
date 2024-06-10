@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.2rem 0;
+}
+.checkboxes,
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(clamp(8rem, 25%, 12rem), 1fr)
+  );
+  gap: 0.6rem;
+}
+
+.select,
+.reset {
+  border-radius: 5px;
+  padding: 0.4rem 1.2rem;
+  display: block;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+  font-size: clamp(1.2rem, 1.4vw, 1.4rem);
+}
+
+.select {
+  border: 1px solid #1e1e1e;
+}
+
+.reset {
+  background: #be2b2b;
+  border: none;
+  color: #fefefe;
+}
+
+.select:hover,
+.reset:hover {
+  scale: 0.96;
+}
