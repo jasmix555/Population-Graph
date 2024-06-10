@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  padding: 1.2rem 0;
 }
 .checkboxes {
   display: grid;
@@ -10,4 +11,28 @@
     minmax(clamp(8rem, 25%, 12rem), 1fr)
   );
   gap: 0.6rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(clamp(8rem, 25%, 12rem), 1fr)
+  );
+  gap: 0.6rem;
+}
+
+.select,
+.reset {
+  border: 1px solid #1e1e1e;
+  border-radius: 5px;
+  padding: 0.4rem 1.2rem;
+  display: block;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+}
+
+.select:hover,
+.reset:hover {
+  scale: 0.96;
 }

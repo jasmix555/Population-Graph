@@ -4,7 +4,7 @@ import { PrefectureCheckboxes } from './components/PrefectureCheckbox';
 const App = () => {
   return (
     <div className={style.wrapper}>
-      <h1>Population Graph</h1>
+      <header className={style.header}>都道府県別人口推移</header>
       <PrefectureCheckboxes />
     </div>
   );

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import style from './style.module.css';
 import { Checkbox } from '../Checkbox';
 import { usePrefectures } from '../../api/hooks/usePrefectures';
 import { Prefecture } from '../../types/resas-api';
+import { regions } from '../../types/regions';
 
-export const PrefectureCheckboxes: React.FC = () => {
+export const PrefectureCheckboxes = () => {
   const { prefectures, isLoading, isError } = usePrefectures();
   const [selectedPrefectures, setSelectedPrefectures] = useState<number[]>([]);
+  const [selectedRegion, setSelectedRegion] = useState<string>('');
 
   const handleCheckboxChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -21,6 +23,21 @@ export const PrefectureCheckboxes: React.FC = () => {
     }
   };
 
+  const handleRegionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedRegion(event.target.value);
+  };
+
+  const filteredPrefectures =
+    selectedRegion ?
+      prefectures.filter((prefecture) =>
+        regions[selectedRegion].includes(prefecture.prefCode),
+      )
+    : prefectures;
+
+  const handleUncheckAll = () => {
+    setSelectedPrefectures([]);
+  };
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -31,8 +48,32 @@ export const PrefectureCheckboxes: React.FC = () => {
 
   return (
     <div className={style.wrapper}>
+      <div className={style.buttons}>
+        <select
+          value={selectedRegion}
+          onChange={handleRegionChange}
+          className={style.select}
+        >
+          <option value="">全ての地域</option>
+          {Object.keys(regions).map((region) => (
+            <option
+              key={region}
+              value={region}
+            >
+              {region}
+            </option>
+          ))}
+        </select>
+        <button
+          type="button"
+          onClick={handleUncheckAll}
+        >
+          全てチェックを外す
+        </button>
+      </div>
+
       <div className={style.checkboxes}>
-        {prefectures.map((prefecture: Prefecture) => (
+        {filteredPrefectures.map((prefecture: Prefecture) => (
           <Checkbox
             key={prefecture.prefCode}
             label={prefecture.prefName}
