@@ -27,7 +27,7 @@ export const usePopulationInfo = (selectedPrefectures: Prefecture[]) => {
   );
 
   return {
-    populationData: data || {},
+    populationData: data ?? {},
     isLoading: !error && !data,
     isError: !!error,
   };
