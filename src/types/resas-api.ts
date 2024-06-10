@@ -22,3 +22,7 @@ export interface PopulationResult {
   boundaryYear: number;
   data: PopulationResponse[];
 }
+
+export interface PopulationDataByPrefecture {
+  [prefCode: number]: PopulationResponse[];
+}
