@@ -21,14 +21,14 @@ const fetchPopulationData = async (
 
 export const usePopulationInfo = (selectedPrefectures: Prefecture[]) => {
   const prefCodes = selectedPrefectures.map((pref) => pref.prefCode);
-  const { data, error } = useSWR(
+  const { data, error, isLoading } = useSWR(
     () => (prefCodes.length > 0 ? ['populationData', ...prefCodes] : null),
     () => fetchPopulationData(prefCodes),
   );
 
   return {
     populationData: data ?? {},
-    isLoading: !error && !data,
+    isLoading: isLoading && !data,
     isError: !!error,
   };
 };

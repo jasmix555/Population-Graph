@@ -81,17 +81,14 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
         height: 'fit-content',
       },
       events: {
-        noData: function (this: CustomChart) {
-          if (!isAnyCheckboxSelected) {
-            this.showLoading('都道府県を選択してください。');
-          }
-          return { text: '都道府県を選択してください。' };
-        },
         load: function (this: CustomChart) {
           if (isLoading) {
             this.showLoading('読み込み中。。。');
           } else {
             this.hideLoading();
+            if (!isAnyCheckboxSelected) {
+              this.showLoading('都道府県を選択してください。');
+            }
           }
         },
         redraw: function (this: CustomChart) {
@@ -99,6 +96,9 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
             this.showLoading('読み込み中。。。');
           } else {
             this.hideLoading();
+            if (!isAnyCheckboxSelected) {
+              this.showLoading('都道府県を選択してください。');
+            }
           }
         },
         error: function (this: CustomChart) {
