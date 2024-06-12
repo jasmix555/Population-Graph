@@ -125,7 +125,7 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
             chart: {
               style: {
                 height: '400',
-                fontSize: '1rem',
+                fontSize: '1.2rem',
               },
             },
           },
