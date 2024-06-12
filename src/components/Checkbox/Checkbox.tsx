@@ -14,7 +14,13 @@ export const Checkbox = ({
   checked,
 }: CheckboxProps) => {
   return (
-    <label className={`${style.wrapper} ${checked ? style.checked : ''}`}>
+    <label
+      className={`${style.wrapper} ${
+        disabled ? style.disabled
+        : checked ? style.checked
+        : ''
+      }`}
+    >
       <input
         type="checkbox"
         onChange={onChange}

@@ -18,6 +18,12 @@
   /* vertical-align: middle; */
 }
 
+.disabled {
+  background: #f0f0f0;
+  color: #1e1e1e;
+  cursor: not-allowed;
+}
+
 .checked {
   border: 1px solid transparent;
   color: #f0f0f0;
