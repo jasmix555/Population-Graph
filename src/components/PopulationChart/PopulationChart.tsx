@@ -152,6 +152,9 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
       },
     },
     series,
+    accessibility: {
+      enabled: false,
+    },
   };
 
   return (
