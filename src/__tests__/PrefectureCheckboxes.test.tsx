@@ -4,6 +4,7 @@ import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import { PrefectureCheckboxes } from '../components/PrefectureCheckbox/PrefectureCheckboxes';
 import { server } from '../mocks/server';
 import { http, HttpResponse } from 'msw';
+import { BASE_URL } from '../api/resas/resas-api';
 
 describe('PrefectureCheckboxes', () => {
   const mockOnChange = vi.fn();
@@ -11,7 +12,7 @@ describe('PrefectureCheckboxes', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     server.resetHandlers(
-      http.get('/api/v1/prefectures', () => {
+      http.get(`${BASE_URL}/api/v1/prefectures`, () => {
         return HttpResponse.json({
           result: [
             { prefCode: 1, prefName: '北海道' },
@@ -35,6 +36,31 @@ describe('PrefectureCheckboxes', () => {
     );
 
     expect(screen.getByText('読み込み中。。。')).toBeInTheDocument();
+  });
+
+  it('renders error state correctly', async () => {
+    server.use(
+      http.get(`${BASE_URL}/api/v1/prefectures`, () => {
+        console.log('Returning error response');
+        return new HttpResponse(null, {
+          status: 500,
+          statusText: 'Failed to fetch prefectures',
+        });
+      }),
+    );
+
+    render(
+      <PrefectureCheckboxes
+        setSelectedPrefectures={mockOnChange}
+        selectedPrefectures={[]}
+        onChange={mockOnChange}
+      />,
+    );
+    console.log(document.body.innerHTML);
+
+    await waitFor(() => {
+      expect(screen.getByText(/読み込みエラー/)).toBeInTheDocument();
+    });
   });
 
   it('renders checkboxes with prefectures', async () => {
