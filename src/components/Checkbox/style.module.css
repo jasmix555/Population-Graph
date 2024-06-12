@@ -8,6 +8,7 @@
   transition: 100ms ease-in-out;
   align-items: center;
 }
+
 .wrapper:hover {
   background-color: #f0f0f0;
   scale: 0.96;
@@ -15,7 +16,12 @@
 
 .wrapper input {
   margin-right: 0.6rem;
-  /* vertical-align: middle; */
+}
+
+.disabled {
+  background: #f0f0f0;
+  color: #1e1e1e;
+  cursor: not-allowed;
 }
 
 .checked {
@@ -23,6 +29,7 @@
   color: #f0f0f0;
   background: #0075ff;
 }
+
 .checked:hover {
   background: #0055ff;
   scale: 0.98;

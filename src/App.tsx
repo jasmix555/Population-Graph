@@ -36,17 +36,18 @@ const App: React.FC = () => {
   };
 
   if (isLoading) {
-    return <div className={style.title}>Loading...</div>;
+    return <div className={style.loader}>Loading...</div>;
   }
 
   if (isError) {
-    return <div className={style.title}>Error loading prefectures.</div>;
+    return <div className={style.loader}>Error loading prefectures.</div>;
   }
 
   return (
     <div className={style.wrapper}>
-      <header className={style.header}>都道府県別人口推移</header>
+      <h1 className={style.title}>都道府県別人口推移</h1>
       <div className={style.container}>
+        <h2 className={style.header}>都道府県</h2>
         <PrefectureCheckboxes
           selectedPrefectures={selectedPrefectures}
           onChange={handlePrefectureChange}

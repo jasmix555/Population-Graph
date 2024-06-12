@@ -35,3 +35,5 @@ VITE_RESAS_API_KEY="your_resas_api_key"
 ```bash
 npm run dev
 ```
+
+node version : v20.13.1 (LTS version)
