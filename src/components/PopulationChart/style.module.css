@@ -1,0 +1,13 @@
+.select {
+  border-radius: 5px;
+  border: 1px solid #1e1e1e;
+  padding: 0.4rem 1.2rem;
+  display: block;
+  font-size: clamp(1.2rem, 1.4vw, 1.4rem);
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+}
+
+.select:hover {
+  scale: 0.96;
+}

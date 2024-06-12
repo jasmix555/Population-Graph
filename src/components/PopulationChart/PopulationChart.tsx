@@ -62,6 +62,16 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
 
   const isAnyCheckboxSelected = selectedPrefectures.length > 0;
 
+  const formatNumber = (value: number): string => {
+    if (value >= 100000000) {
+      return `${(value / 100000000).toFixed(1)}億`;
+    } else if (value >= 10000) {
+      return `${(value / 10000).toFixed(1)}万`;
+    } else {
+      return value.toString();
+    }
+  };
+
   const options = {
     chart: {
       type: 'line',
@@ -73,9 +83,9 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
       events: {
         noData: function (this: CustomChart) {
           if (!isAnyCheckboxSelected) {
-            this.showLoading('データがありません');
+            this.showLoading('都道府県を選択してください。');
           }
-          return { text: 'データがありません' };
+          return { text: '都道府県を選択してください。' };
         },
         load: function (this: CustomChart) {
           if (isLoading) {
@@ -102,6 +112,9 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
       align: 'right',
       verticalAlign: 'top',
     },
+    lang: {
+      noData: '都道府県を選択してください',
+    },
     responsive: {
       rules: [
         {
@@ -120,7 +133,7 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
       ],
     },
     title: {
-      text: '人口推移',
+      text: '',
     },
     xAxis: {
       categories: [...filteredYears],
@@ -131,6 +144,11 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
     yAxis: {
       title: {
         text: '人口数',
+      },
+      labels: {
+        formatter: function (this: { value: number }): string {
+          return formatNumber(this.value);
+        },
       },
     },
     series,
