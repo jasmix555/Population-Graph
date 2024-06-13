@@ -1,13 +1,6 @@
-.title {
-  background-color: #232323;
-  color: #fefefe;
-  padding: 1rem 2rem;
-  font-size: clamp(1.2rem, 2vw, 2rem);
-  font-weight: bold;
+.prefecture {
   width: 100%;
-  text-align: center;
 }
-
 .header {
   font-size: clamp(1.2rem, 2vw, 1.8rem);
   padding: 1rem 2rem;
@@ -22,15 +15,4 @@
   width: 100vw;
   height: 100vh;
   font-weight: bold;
-}
-
-.wrapper {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.container {
-  display: grid;
-  grid-template-rows: auto;
 }
