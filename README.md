@@ -4,6 +4,54 @@ This project is a web application that displays population trends for various pr
 It allows users to select prefectures and view population data over time.
 The application includes features for filtering by regions and population categories.
 
+## Directory
+
+```bash
+src
+├── App.module.css
+├── App.test.tsx
+├── App.tsx
+├── __tests__
+│   ├── PopulationChart.test.tsx
+│   ├── PrefectureCheckboxes.test.tsx
+│   ├── resas-api.test.ts
+│   └── setup.ts
+├── api
+│   ├── hooks
+│   │   ├── usePopulationInfo.ts
+│   │   └── usePrefectures.ts
+│   └── resas
+│       └── resas-api.ts
+├── assets
+│   └── react.svg
+├── components
+│   ├── Checkbox
+│   │   ├── Checkbox.tsx
+│   │   ├── index.ts
+│   │   └── style.module.css
+│   ├── PopulationChart
+│   │   ├── PopulationChart.tsx
+│   │   ├── index.ts
+│   │   └── style.module.css
+│   └── PrefectureCheckbox
+│       ├── PrefectureCheckboxes.tsx
+│       ├── index.ts
+│       └── style.module.css
+├── hooks
+│   ├── useCurrentPrefectures.ts
+│   └── useLocalStorage.ts
+├── index.css
+├── main.tsx
+├── mocks
+│   ├── handlers.ts
+│   └── server.ts
+├── types
+│   └── resas-api.ts
+└── vite-env.d.ts
+
+13 directories, 28 files
+```
+
 ## Installation
 
 ### Clone the repository:
@@ -37,3 +85,5 @@ npm run dev
 ```
 
 node version : v20.13.1 (LTS version)
+npm version : 10.5.2
+bun version : 1.1.13
