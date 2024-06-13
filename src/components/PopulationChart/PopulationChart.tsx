@@ -169,6 +169,7 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
           <option
             key={category}
             value={category}
+            label={category}
           >
             {category}
           </option>
