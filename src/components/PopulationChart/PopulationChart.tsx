@@ -165,15 +165,16 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
         value={selectedCategory}
         className={style.select}
       >
-        {categories.map((category) => (
-          <option
-            key={category}
-            value={category}
-            label={category}
-          >
-            {category}
-          </option>
-        ))}
+        <optgroup label="地域">
+          {categories.map((category) => (
+            <option
+              key={category}
+              value={category}
+            >
+              {category}
+            </option>
+          ))}
+        </optgroup>
       </select>
 
       <HighchartsReact
