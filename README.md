@@ -85,5 +85,7 @@ npm run dev
 ```
 
 node version : v20.13.1 (LTS version)
+
 npm version : 10.5.2
+
 bun version : 1.1.13
