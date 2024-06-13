@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
-    minmax(clamp(8rem, 25%, 12rem), 1fr)
+    minmax(clamp(6rem, 25%, 12rem), 1fr)
   );
   gap: 0.6rem;
 }

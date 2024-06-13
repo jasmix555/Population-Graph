@@ -5,6 +5,7 @@ import useLocalStorage from './hooks/useLocalStorage';
 import { PopulationChart } from './components/PopulationChart';
 import useCurrentPrefectures from './hooks/useCurrentPrefectures';
 import style from './App.module.css';
+import Layout from './layout/layout';
 
 const App: React.FC = () => {
   const { prefectures, isLoading, isError } = usePrefectures();
@@ -44,18 +45,17 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className={style.wrapper}>
-      <h1 className={style.title}>都道府県別人口推移</h1>
-      <div className={style.container}>
-        <h2 className={style.header}>都道府県</h2>
+    <Layout>
+      <h2 className={style.header}>都道府県</h2>
+      <div className={style.prefecture}>
         <PrefectureCheckboxes
           selectedPrefectures={selectedPrefectures}
           onChange={handlePrefectureChange}
           setSelectedPrefectures={setSelectedPrefectures}
         />
-        <PopulationChart selectedPrefectures={currentPrefectures} />
       </div>
-    </div>
+      <PopulationChart selectedPrefectures={currentPrefectures} />
+    </Layout>
   );
 };
 
