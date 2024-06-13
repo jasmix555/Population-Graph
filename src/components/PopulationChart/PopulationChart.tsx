@@ -165,7 +165,7 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
         value={selectedCategory}
         className={style.select}
       >
-        <optgroup label="地域">
+        <optgroup label="カテゴリ">
           {categories.map((category) => (
             <option
               key={category}
