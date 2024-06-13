@@ -89,3 +89,13 @@ node version : v20.13.1 (LTS version)
 npm version : 10.5.2
 
 bun version : 1.1.13
+
+## What i worked on
+
+Coding experience:
+- i have rarely ever used an api to get information or use something of the sort which was challenging at first.
+- i also had to use axios, swr which is mainly related to api linking and securing which was very tough
+- it was my first time writing a test code which i couldnt get the hang of it and had to read a lot of documents and help from AI
+- first time writing a mock server using msw to imitate the functions of the real website and use it on the test codes
+- first time dealing with cache of the sort when using swr
+- first time using a graph library and had to study its options and series of functions
