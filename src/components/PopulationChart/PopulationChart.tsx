@@ -114,6 +114,7 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({
     },
     lang: {
       noData: '都道府県を選択してください',
+      error: '読み込みエラー',
     },
     responsive: {
       rules: [

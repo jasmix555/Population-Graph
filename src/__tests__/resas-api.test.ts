@@ -58,7 +58,7 @@ describe('RESAS API', () => {
 
       expect(result).toEqual([
         {
-          label: 'label1',
+          label: '総人口',
           data: [
             { year: 1980, value: 10000 },
             { year: 1990, value: 12000 },
@@ -68,7 +68,7 @@ describe('RESAS API', () => {
           ],
         },
         {
-          label: 'label2',
+          label: '年少人口',
           data: [
             { year: 1980, value: 20000 },
             { year: 1990, value: 22000 },

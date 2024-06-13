@@ -15,7 +15,6 @@ export const PrefectureCheckboxes: React.FC<PrefectureCheckboxesProps> = ({
   }
 
   if (isError) {
-    console.error('Failed to fetch prefectures');
     return <div>読み込みエラー</div>;
   }
 

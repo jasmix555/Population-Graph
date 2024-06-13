@@ -21,6 +21,6 @@ export const usePrefectures = () => {
   return {
     prefectures: data ?? [],
     isLoading: isLoading && !error,
-    isError: !!error,
+    isError: error,
   };
 };
