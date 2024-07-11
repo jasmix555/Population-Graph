@@ -24,7 +24,6 @@ export const PrefectureCheckboxes: React.FC<PrefectureCheckboxesProps> = ({
       role="group"
       aria-labelledby="prefecture-checkbox-group"
     >
-      <legend id="prefecture-checkbox-group">都道府県を選択</legend>
       <div className={style.checkboxes}>
         {prefectures.map((prefecture) => (
           <Checkbox
