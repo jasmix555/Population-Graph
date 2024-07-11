@@ -1,7 +1,3 @@
-.container {
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
 .select {
   width: clamp(10rem, 25%, 13rem);
   font-size: clamp(1.2rem, 1.4vw, 1.4rem);

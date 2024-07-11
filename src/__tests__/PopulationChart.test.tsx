@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import { Prefecture } from '../types/resas-api';
+import { Prefecture } from '../api/types/resas-types';
 import { PopulationChart } from '../components/PopulationChart';
 import Highcharts from 'highcharts';
 // import { server } from '../mocks/server';

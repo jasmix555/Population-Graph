@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { Prefecture } from '../../types/resas-api';
+import { Prefecture } from '../types/resas-types';
 import {
   PopulationResponse,
   ResasApiResponse,
   PopulationResult,
-} from '../../types/resas-api';
+} from '../types/resas-types';
 
 const API_KEY = import.meta.env.VITE_RESAS_API_KEY;
 export const BASE_URL = 'https://opendata.resas-portal.go.jp';

@@ -2,7 +2,7 @@ import React from 'react';
 import style from './style.module.css';
 import { Checkbox } from '../Checkbox';
 import { usePrefectures } from '../../api/hooks/usePrefectures';
-import { PrefectureCheckboxesProps } from '../../types/resas-api';
+import { PrefectureCheckboxesProps } from '../../api/types/resas-types';
 
 export const PrefectureCheckboxes: React.FC<PrefectureCheckboxesProps> = ({
   selectedPrefectures,

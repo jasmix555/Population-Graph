@@ -2,7 +2,7 @@
 
 import useSWR from 'swr';
 import { fetchPopulation } from '../resas/resas-api';
-import { Prefecture, PopulationDataByPrefecture } from '../../types/resas-api';
+import { Prefecture, PopulationDataByPrefecture } from '../types/resas-types';
 
 const fetchPopulationData = async (
   prefCodes: number[],

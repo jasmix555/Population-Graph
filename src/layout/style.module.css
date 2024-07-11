@@ -1,12 +1,12 @@
 .wrapper {
-  min-height: screen;
+  height: screen;
 }
 
 .header {
   background-color: #232323;
   color: #fefefe;
   padding: 1rem 2rem;
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   font-weight: bold;
   text-align: center;
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Prefecture } from '../types/resas-api';
+import { Prefecture } from '../api/types/resas-types';
 
 const useCurrentPrefectures = (
   selectedPrefectures: number[],

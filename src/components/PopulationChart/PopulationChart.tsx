@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { usePopulationInfo } from '../../api/hooks/usePopulationInfo';
-import { PopulationChartProps } from '../../types/resas-api';
+import { PopulationChartProps } from '../../api/types/resas-types';
 import style from './style.module.css';
 
 type CustomChart = Highcharts.Chart & {
